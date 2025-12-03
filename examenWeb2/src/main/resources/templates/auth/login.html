@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+</head>
+<body>
+  <h2>Iniciar sesión</h2>
+
+  <form th:action="@{/login}" method="post">
+  <label>Email</label>
+  <input type="text" name="username" placeholder="tu@correo.com">
+
+  <label>Contraseña</label>
+  <input type="password" name="password" placeholder="12345">
+
+  <button type="submit">Entrar</button>
+</form>
+
+  <p th:if="${param.error}">Credenciales inválidas</p>
+  <p th:if="${param.logout}">Sesión cerrada</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<div th:fragment="content">
+  <h2>Resultados</h2>
+  <table border="1">
+    <tr><th>ID</th><th>Nombre</th><th>Email</th><th>Rol</th></tr>
+    <tr th:each="u: ${usuarios}">
+      <td th:text="${u.id}"></td>
+      <td th:text="${u.nombre} + ' ' + ${u.apellido}"></td>
+      <td th:text="${u.email}"></td>
+      <td th:text="${u.rol.nombre}"></td>
+    </tr>
+  </table>
+</div>

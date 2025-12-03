@@ -1,0 +1,22 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="utf-8"><title>Plataforma</title>
+</head>
+<body>
+<header>
+  <nav>
+    <a th:href="@{/perfil}">Perfil</a> |
+    <a th:href="@{/admin/usuarios}" sec:authorize="hasRole('ADMIN')">Usuarios</a> |
+    <a th:href="@{/admin/roles}" sec:authorize="hasRole('ADMIN')">Roles</a> |
+    <a th:href="@{/prof/reportes}" sec:authorize="hasRole('PROFESOR')">Reportes</a> |
+    <a th:href="@{/consultas}">Consultas</a> |
+    <a th:href="@{/logout}">Salir</a>
+  </nav>
+</header>
+<main>
+  <div th:replace="${contenido}">Contenido</div>
+</main>
+<footer><small>Plataforma Académica</small></footer>
+</body>
+</html>

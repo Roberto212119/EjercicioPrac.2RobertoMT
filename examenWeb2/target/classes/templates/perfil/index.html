@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<div th:fragment="content">
+  <h2>Mi Perfil</h2>
+  <p><b>Nombre: </b><span th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></span></p>
+  <p><b>Email: </b><span th:text="${usuario.email}"></span></p>
+  <p><b>Rol: </b><span th:text="${usuario.rol.nombre}"></span></p>
+</div>

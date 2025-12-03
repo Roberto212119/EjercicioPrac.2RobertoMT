@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<div th:fragment="content">
+  <h2>Roles</h2>
+  <a th:href="@{/admin/roles/nuevo}">Nuevo</a>
+  <table border="1">
+    <tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Acciones</th></tr>
+    <tr th:each="r : ${roles}">
+      <td th:text="${r.id}"></td>
+      <td th:text="${r.nombre}"></td>
+      <td th:text="${r.descripcion}"></td>
+      <td>
+        <a th:href="@{'/admin/roles/editar/' + ${r.id}}">Editar</a> |
+        <a th:href="@{'/admin/roles/eliminar/' + ${r.id}}">Eliminar</a>
+      </td>
+    </tr>
+  </table>
+</div>

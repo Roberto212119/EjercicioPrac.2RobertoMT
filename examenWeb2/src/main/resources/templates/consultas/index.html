@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<div th:fragment="content">
+  <h2>Consultas Avanzadas</h2>
+  <form th:action="@{/consultas/rol}" method="get">
+    <label>Por Rol:</label>
+    <input name="rol" placeholder="ADMIN/PROFESOR/ESTUDIANTE">
+    <button>Buscar</button>
+  </form>
+  <form th:action="@{/consultas/rango}" method="get">
+    <label>Desde:</label><input name="desde" placeholder="2025-01-01T00:00:00">
+    <label>Hasta:</label><input name="hasta" placeholder="2025-12-31T23:59:59">
+    <button>Buscar</button>
+  </form>
+  <form th:action="@{/consultas/buscar}" method="get">
+    <label>Texto:</label><input name="q" placeholder="email o nombre">
+    <button>Buscar</button>
+  </form>
+</div>

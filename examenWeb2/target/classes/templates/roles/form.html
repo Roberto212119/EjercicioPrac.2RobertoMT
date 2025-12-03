@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<div th:fragment="content">
+  <h2 th:text="${rol.id} != null ? 'Editar Rol' : 'Nuevo Rol'"></h2>
+  <form th:action="@{/admin/roles/guardar}" method="post" th:object="${rol}">
+    <input type="hidden" th:field="*{id}">
+    <label>Nombre</label><input th:field="*{nombre}">
+    <label>Descripción</label><input th:field="*{descripcion}">
+    <button type="submit">Guardar</button>
+  </form>
+</div>
